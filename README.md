@@ -36,6 +36,8 @@ npm i react-navigation-helpers
 
 ```js
 import NavigationService from "react-navigation-helpers";
+
+
 <MainNavigator
   ref={navigatorRef =>
     NavigationService.setGlobalLevelNavigator(navigatorRef)
@@ -48,31 +50,31 @@ import NavigationService from "react-navigation-helpers";
 #### Navigate Example
 
 ```js
-  NavigationService.navigate("home")
+NavigationService.navigate("home")
 ```
 
 #### Push Example
 
 ```js
-  NavigationService.push("home")
+NavigationService.push("home")
 ```
 
 #### Pop Example
 
 ```js
-  NavigationService.pop()
+NavigationService.pop()
 ```
 
 #### PopToTop Example
 
 ```js
-  NavigationService.popToTop()
+NavigationService.popToTop()
 ```
 
 #### Back Example
 
 ```js
-  NavigationService.back()
+NavigationService.back()
 ```
 
 
