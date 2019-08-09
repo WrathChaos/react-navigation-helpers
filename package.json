@@ -1,0 +1,29 @@
+{
+  "name": "react-navigation-helpers",
+  "version": "0.0.1",
+  "description": "Helpers for React Navigation",
+  "keywords": [
+    "helpers",
+    "react-navigation",
+    "navigation",
+    "FreakyCoder",
+    "freakycoder",
+    "kuray",
+    "Kuray",
+    "react",
+    "react-native",
+    "javascript",
+    "ui-lib",
+    "rn"
+  ],
+  "homepage": "https://www.freakycoder.com",
+  "bugs": "https://github.com/WrathChaos/react-navigation-helpers/issues",
+  "main": "./lib/src/index.js",
+  "repository": "git@github.com:WrathChaos/react-navigation-helpers.git",
+  "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">= 16.x.x",
+    "react-navigation": ">= 3.x.x"
+  }
+}
