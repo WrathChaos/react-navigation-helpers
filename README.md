@@ -92,7 +92,7 @@ NavigationService.back()
 
 ### ToDos
 
-- [x] LICENSE
+- [x] ~~LICENSE~~
 - [ ] Write an article about the lib on Medium
 
 ## Author
