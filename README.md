@@ -76,6 +76,27 @@ NavigationService.popToTop()
 NavigationService.back()
 ```
 
+## How to pass prop with this library?
+
+The usage does not change. Simply put your prop as the secondary prop **as same as React Navigation** itself.
+
+#### Navigate
+```js
+NavigationService.navigate("home", {data: myData, myId: "d1f01df1" })
+```
+
+#### Push
+```js
+NavigationService.push("home", {data: myData, myId: "d1f01df1" })
+```
+
+
+## How to receive the passed props from navigation or push functions?
+
+```js
+const data = props.navigation.getParam("data", null) // Second one is default value
+const myId = props.navigation.getParam("myId", "") // Second one is default value
+```
 
 ### Configuration - Props
 
