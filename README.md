@@ -76,6 +76,13 @@ NavigationService.popToTop()
 NavigationService.back()
 ```
 
+
+#### Reset Example
+
+```js
+NavigationService.reset()
+```
+
 ## How to pass prop with this library?
 
 The usage does not change. Simply put your prop as the secondary prop **as same as React Navigation** itself.
@@ -111,9 +118,10 @@ const myId = props.navigation.getParam("myId", "") // Second one is default valu
 | reset                   | function | function | reset the navigator                    |
 
 
-### ToDos
+### Roadmap
 
 - [x] ~~LICENSE~~
+- [ ] Better & Real World Example
 - [ ] Write an article about the lib on Medium
 
 ## Author
