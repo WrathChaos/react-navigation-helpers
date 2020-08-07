@@ -1,8 +1,9 @@
 {
   "name": "react-navigation-helpers",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Helpers for React Navigation",
   "keywords": [
+    "v5",
     "helpers",
     "react-navigation",
     "navigation",
@@ -18,12 +19,12 @@
   ],
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-navigation-helpers/issues",
-  "main": "./lib/src/index.js",
+  "main": "./lib/src/NavigationService.js",
   "repository": "git@github.com:WrathChaos/react-navigation-helpers.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": ">= 16.x.x",
-    "react-navigation": ">= 3.x.x"
+    "react-navigation": ">= 5.x.x"
   }
 }

@@ -1,6 +1,8 @@
-<img alt="React Navigation Helpers" src="https://github.com/WrathChaos/react-navigation-helpers/blob/master/assets/logo.png" width="1050"/>
+<img alt="React Navigation Helpers" src="assets/logo.png" width="1050"/>
 
-Helpers for React Navigation.
+[![Battle Tested ✅](https://img.shields.io/badge/-Battle--Tested%20%E2%9C%85-03666e?style=for-the-badge)](https://github.com/WrathChaos/react-navigation-helpers)
+
+[![Helpers for React Navigation](https://img.shields.io/badge/-Helpers%20for%20React%20Navigation-orange?style=for-the-badge)](https://github.com/WrathChaos/react-navigation-helpers)
 
 [![npm version](https://img.shields.io/npm/v/react-navigation-helpers.svg?style=for-the-badge)](https://www.npmjs.com/package/react-navigation-helpers)
 [![npm](https://img.shields.io/npm/dt/react-navigation-helpers.svg?style=for-the-badge)](https://www.npmjs.com/package/react-navigation-helpers)
@@ -20,96 +22,121 @@ npm i react-navigation-helpers
 
 ## Peer Dependencies
 
-###### IMPORTANT! You need install them.
+<i><b>IMPORTANT!</b> You need install them.</i>
 
-```
+```json
 "react": ">= 16.x.x",
-"react-navigation": ">= 3.x.x"
+"react-navigation": ">= 5.x.x"
 ```
+
+## React Navigation Versions
+
+- Use **v0.2.0+** for ReactNavigation **v5**
+- Use **v0.1.0+** for ReactNavigation **v4**
 
 ## Usage
 
 ### Global Level Navigator
 
-<b>Firstly</b> set the global level navigator reference
+Set the global level navigation reference into the `NavigationContainer`
 
 ```js
 import NavigationService from "react-navigation-helpers";
+import { isReadyRef, navigationRef } from "react-navigation-helpers";
 
+React.useEffect(() => {
+  return () => (isReadyRef.current = false);
+}, []);
 
-<MainNavigator
-  ref={navigatorRef =>
-    NavigationService.setGlobalLevelNavigator(navigatorRef)
-  }
-/>
+<NavigationContainer
+  ref={navigationRef}
+  onReady={() => {
+    isReadyRef.current = true;
+  }}
+>
+  {/* ... */}
+</NavigationContainer>;
 ```
 
-### NavigationService Usage
+## NavigationService Usage
 
-#### Navigate Example
+### Navigate Example
 
 ```js
-NavigationService.navigate("home")
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.navigate("home");
 ```
 
-#### Push Example
+### Push Example
 
 ```js
-NavigationService.push("home")
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.push("home");
 ```
 
-#### Pop Example
+### Pop Example
 
 ```js
-NavigationService.pop()
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.pop();
 ```
 
-#### PopToTop Example
+### PopToTop Example
 
 ```js
-NavigationService.popToTop()
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.popToTop();
 ```
 
-#### Back Example
+### Back Example
 
 ```js
-NavigationService.back()
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.back();
 ```
 
 ## How to pass prop with this library?
 
 The usage does not change. Simply put your prop as the secondary prop **as same as React Navigation** itself.
 
-#### Navigate
+### Navigate
+
 ```js
-NavigationService.navigate("home", {data: myData, myId: "d1f01df1" })
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.navigate("home", { data: myData, myId: "d1f01df1" });
 ```
 
-#### Push
-```js
-NavigationService.push("home", {data: myData, myId: "d1f01df1" })
-```
+### Push
 
+```js
+import * as NavigationService from "react-navigation-helpers";
+
+NavigationService.push("home", { data: myData, myId: "d1f01df1" });
+```
 
 ## How to receive the passed props from navigation or push functions?
 
 ```js
-const data = props.navigation.getParam("data", null) // Second one is default value
-const myId = props.navigation.getParam("myId", "") // Second one is default value
+const data = props.navigation.getParam("data", null); // Second one is default value
+const myId = props.navigation.getParam("myId", ""); // Second one is default value
 ```
 
 ### Configuration - Props
 
-| Property                |   Type   | Default  | Description                            |
-| ----------------------- | :------: | :------: | -------------------------------------- |
-| setGlobalLevelNavigator | function | function | set your global level navigator (MUST) |
-| navigate                | function | function | navigate the selected screen           |
-| push                    | function | function | push the selected screen               |
-| back                    | function | function | back the previous screen               |
-| pop                     | function | function | pop the previous screen                |
-| popToTop                | function | function | pop the top level of the screen        |
-| reset                   | function | function | reset the navigator                    |
-
+| Property |   Type   | Default  | Description                     |
+| -------- | :------: | :------: | ------------------------------- |
+| navigate | function | function | navigate the selected screen    |
+| push     | function | function | push the selected screen        |
+| goBack   | function | function | back the previous screen        |
+| pop      | function | function | pop the previous screen         |
+| popToTop | function | function | pop the top level of the screen |
+| reset    | function | function | reset the navigator             |
 
 ### ToDos
 
