@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
-import NavigationService from "react-navigation-helpers";
+import * as NavigationService from "../lib/src/NavigationService";
 import styles from "./styles/styles";
 
 export default class HomeScreen extends Component {

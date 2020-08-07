@@ -1,20 +1,46 @@
-import React, { Fragment } from "react";
+import "react-native-gesture-handler";
+import React, { useEffect } from "react";
 import { StatusBar } from "react-native";
-import NavigationService from "react-navigation-helpers";
-import Navigation from "./src/services/navigation/Navigation";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+import { isReadyRef, navigationRef } from "./lib/src/NavigationService";
+
+// ? Screens
+import HomeScreen from "./screens/HomeScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
-  const MainNavigator = Navigation.createBottomTabNavigator();
+  useEffect(() => {
+    return () => (isReadyRef.current = false);
+  }, []);
 
   return (
-    <Fragment>
+    <>
       <StatusBar barStyle="dark-content" />
-      <MainNavigator
-        ref={navigatorRef =>
-          NavigationService.setGlobalLevelNavigator(navigatorRef)
-        }
-      />
-    </Fragment>
+      <NavigationContainer
+        ref={navigationRef}
+        onReady={() => {
+          isReadyRef.current = true;
+        }}
+      >
+        {/*
+        // ? Tab Example, do not forget to use `goBack` instead of `pop` function
+         <Tab.Navigator>
+          <Tab.Screen name="Welcome" component={WelcomeScreen} />
+          <Tab.Screen name="Home" component={HomeScreen} />
+        </Tab.Navigator> 
+        */}
+        <Stack.Navigator>
+          <Stack.Screen name="Welcome" component={WelcomeScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 };
 

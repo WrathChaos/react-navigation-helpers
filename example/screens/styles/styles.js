@@ -2,7 +2,7 @@ export default {
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   buttonStyle: {
     width: 250,
@@ -11,10 +11,10 @@ export default {
     borderRadius: 32,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "pink"
+    backgroundColor: "pink",
   },
   textStyle: {
     color: "white",
-    fontWeight: "700"
-  }
+    fontWeight: "700",
+  },
 };
