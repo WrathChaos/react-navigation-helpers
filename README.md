@@ -40,8 +40,7 @@ npm i react-navigation-helpers
 
 Set the global level navigation reference into the `NavigationContainer`
 
-```js
-import NavigationService from "react-navigation-helpers";
+```jsx
 import { isReadyRef, navigationRef } from "react-navigation-helpers";
 
 React.useEffect(() => {
