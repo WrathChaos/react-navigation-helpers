@@ -122,8 +122,7 @@ NavigationService.push("home", { data: myData, myId: "d1f01df1" });
 ## How to receive the passed props from navigation or push functions?
 
 ```js
-const data = props.navigation.getParam("data", null); // Second one is default value
-const myId = props.navigation.getParam("myId", ""); // Second one is default value
+const { data, id } = this.props.route.params;
 ```
 
 ### Configuration - Props
