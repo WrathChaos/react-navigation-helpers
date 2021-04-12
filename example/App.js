@@ -4,8 +4,7 @@ import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import { isReadyRef, navigationRef } from "./lib/src/NavigationService";
+import { isReadyRef, navigationRef } from "react-navigation-helpers";
 
 // ? Screens
 import HomeScreen from "./screens/HomeScreen";
