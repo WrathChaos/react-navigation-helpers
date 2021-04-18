@@ -1,29 +1,27 @@
 import * as React from "react";
-import { StackActions } from "@react-navigation/native";
+import { NavigationContainerRef, StackActions } from "@react-navigation/native";
 
-export const isReadyRef = React.createRef();
-export const navigationRef = React.createRef();
+export let isReadyRef = React.createRef<any>();
+export let navigationRef = React.createRef<NavigationContainerRef>();
 
 export const navigate = (routeName: string, params?: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
     // Perform navigation if the app has mounted
-    navigationRef?.current.navigate(routeName, params);
+    navigationRef?.current?.navigate(routeName, params);
   }
 };
 
-export const push = (routeName: string, params?: any, ...args: any) => {
+export const push = (routeName: string, params?: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
     // Perform navigation if the app has mounted
-    navigationRef.current.dispatch(
-      StackActions.push(routeName, params, ...args),
-    );
+    navigationRef.current.dispatch(StackActions.push(routeName, params));
   }
 };
 
-export const goBack = (...args: any) => {
+export const goBack = () => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
     // Perform navigation if the app has mounted
-    navigationRef.current.goBack(...args);
+    navigationRef.current.goBack();
   }
 };
 
@@ -34,10 +32,10 @@ export const pop = (...args: any) => {
   }
 };
 
-export const popToTop = (...args: any) => {
+export const popToTop = () => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
     // Perform navigation if the app has mounted
-    navigationRef.current?.dispatch(StackActions.popToTop(...args));
+    navigationRef.current?.dispatch(StackActions.popToTop());
   }
 };
 
