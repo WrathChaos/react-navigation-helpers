@@ -4,14 +4,14 @@ import { StackActions } from "@react-navigation/native";
 export const isReadyRef = React.createRef();
 export const navigationRef = React.createRef();
 
-export const navigate = (routeName: string, params: any) => {
+export const navigate = (routeName: string, params?: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
     // Perform navigation if the app has mounted
     navigationRef?.current.navigate(routeName, params);
   }
 };
 
-export const push = (routeName: string, params: any, ...args: any) => {
+export const push = (routeName: string, params?: any, ...args: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
     // Perform navigation if the app has mounted
     navigationRef.current.dispatch(
