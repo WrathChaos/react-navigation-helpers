@@ -26,7 +26,7 @@ npm i react-navigation-helpers
 
 ```json
 "react": ">= 16.x.x",
-"react-navigation": ">= 5.x.x"
+"@react-navigation/native": ">= 5.x.x"
 ```
 
 ## React Navigation Versions
