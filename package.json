@@ -35,7 +35,7 @@
   },
   "peerDependencies": {
     "react": ">= 16.x.x",
-    "react-navigation": ">= 5.x.x"
+    "@react-navigation/native": ">= 5.x.x"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
