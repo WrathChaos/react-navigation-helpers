@@ -43,7 +43,7 @@ Set the global level navigation reference into the `NavigationContainer`
 ```jsx
 import { isReadyRef, navigationRef } from "react-navigation-helpers";
 
-React.useEffect(() => {
+useEffect((): any => {
   return () => (isReadyRef.current = false);
 }, []);
 
@@ -53,7 +53,7 @@ React.useEffect(() => {
     isReadyRef.current = true;
   }}
 >
-  {/* ... */}
+  {/* Rest of your code */}
 </NavigationContainer>;
 ```
 

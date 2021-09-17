@@ -22,7 +22,8 @@
     "sourceMap": true /* Generates corresponding '.map' file. */
   },
   "exclude": [
-    "example",
+    "v5-example",
+    "v6-example",
     "node_modules",
     "babel.config.js",
     "metro.config.js",
