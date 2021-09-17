@@ -31,11 +31,11 @@ npm i react-navigation-helpers
 
 ## React Navigation Versions
 
-| Version   | Supported React Navigation Version |
-| --------- | ---------------------------------- |
-| **1.0.0** | **v6**                             |
-| 0.2.0     | v5                                 |
-| < 0.1.0   | v4                                 |
+| Version     | Supported React Navigation Version |
+| ----------- | ---------------------------------- |
+| _**1.0.0**_ | _**v6**_                           |
+| 0.2.0       | v5                                 |
+| < 0.1.0     | v4                                 |
 
 ## Usage
 
