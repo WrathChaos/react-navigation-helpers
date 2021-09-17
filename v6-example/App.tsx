@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
  * ? Local Imports
  */
 import HomeScreen from "./src/screens/HomeScreen";
-import { isReadyRef, navigationRef } from "./lib/NavigationService";
+import { isReadyRef, navigationRef } from "./build/dist/NavigationService";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

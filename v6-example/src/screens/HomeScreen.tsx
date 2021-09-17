@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Button, StyleProp, ViewStyle } from "react-native";
-import * as NavigationService from "../../lib/NavigationService";
+import * as NavigationService from "../../build/dist/NavigationService";
 /**
  * ? Local Imports
  */
