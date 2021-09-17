@@ -33,8 +33,8 @@ npm i react-navigation-helpers
 
 | Version     | Supported React Navigation Version |
 | ----------- | ---------------------------------- |
-| _**1.0.0**_ | _**v6**_                           |
-| 0.2.0       | v5                                 |
+| _**2.0.0**_ | _**v6**_                           |
+| 1.1.1       | v5                                 |
 | < 0.1.0     | v4                                 |
 
 ## Usage
