@@ -16,7 +16,8 @@
     "react": "17.0.2",
     "react-native": "0.65.1",
     "react-native-safe-area-context": "^3.3.2",
-    "react-native-screens": "^3.7.2"
+    "react-native-screens": "^3.7.2",
+    "react-navigation-helpers": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

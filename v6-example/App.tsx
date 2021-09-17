@@ -3,11 +3,11 @@ import { Text, View, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { isReadyRef, navigationRef } from "react-navigation-helpers";
 /**
  * ? Local Imports
  */
 import HomeScreen from "./src/screens/HomeScreen";
-import { isReadyRef, navigationRef } from "./build/dist/NavigationService";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
