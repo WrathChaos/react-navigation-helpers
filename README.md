@@ -35,7 +35,7 @@ Works with React Navigation
 
 | Version     | Supported React Navigation Version |
 | ----------- | ---------------------------------- |
-| _**2.0.0**_ | _**v6**_                           |
+| _**2.0.0 >**_ | _**v6**_                           |
 | 1.1.1       | v5                                 |
 | < 0.1.0     | v4                                 |
 
