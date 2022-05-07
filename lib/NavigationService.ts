@@ -8,8 +8,8 @@ interface RefObject<T> {
   current: T | null;
 }
 
-export let isReadyRef: RefObject<boolean> = React.createRef<any>();
-export let navigationRef = createNavigationContainerRef<any>();
+export const isReadyRef: RefObject<boolean> = React.createRef<boolean>();
+export const navigationRef = createNavigationContainerRef<any>();
 
 export const navigate = (routeName: string, params?: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
