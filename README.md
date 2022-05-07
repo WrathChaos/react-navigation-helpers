@@ -22,10 +22,12 @@ npm i react-navigation-helpers
 
 ## Peer Dependencies
 
-<i><b>IMPORTANT!</b> You need install them.</i>
+Works with React Navigation 
+- **v6**
+- v5
+- v4
 
 ```json
-"react": ">= 16.x.x",
 "@react-navigation/native": ">= 4.x.x"
 ```
 
