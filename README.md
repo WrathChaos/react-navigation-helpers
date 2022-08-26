@@ -62,58 +62,6 @@ useEffect((): any => {
 </NavigationContainer>;
 ```
 
-### Global Stack Navigator Events
-
-To listen to the Stack navigator events from anywhere, you need to import `navigationListenerProps` and spread it as props. It is currently limited to a single stack navigator.
-```jsx
-import { isReadyRef, navigationRef, navigationListenerProps } from "react-navigation-helpers";
-
-useEffect((): any => {
-  return () => (isReadyRef.current = false);
-}, []);
-
-<NavigationContainer
-  ref={navigationRef}
-  onReady={() => {
-    isReadyRef.current = true;
-  }}
->
-  <Stack.Navigator {...navigationListenerProps}>
-      {/* Rest of your code */}
-  </Stack.Navigator>
-</NavigationContainer>;
-```
-
-you can then listen to [stack navigation events](https://reactnavigation.org/docs/stack-navigator#events) anywhere in your app.
-
-Example in a component:
-```jsx
-import React, {useEffect} from "react"
-import {addNavigationListener} from "react-navigation-helpers"
-// or as a whole
-import * as NavigationService from "react-navigation-helpers";
-
-const MyComponent = () => {
-    
-    useEffect(() => {
-        return addNavigationListener("transitionEnd", () => {
-            // transition ended
-        })
-    })
-
-    // or like this
-    useEffect(() => {
-        return NavigationService.addNavigationListener("transitionEnd", () => {
-            // transition ended
-        })
-    })
-    
-    return (
-        <Text>Hello world!</Text>
-    )
-}
-```
-
 
 
 ## NavigationService Usage
@@ -195,7 +143,59 @@ const { data, id } = this.props.route.params;
 | popToTop | function | function | pop the top level of the screen |
 | reset    | function | function | reset the navigator             |
 
-### ToDos
+### Global Stack Navigator Events
+
+To listen to the Stack navigator events from anywhere, you need to import `navigationListenerProps` and spread it as props. It is currently limited to a single stack navigator.
+```jsx
+import { isReadyRef, navigationRef, navigationListenerProps } from "react-navigation-helpers";
+
+useEffect((): any => {
+  return () => (isReadyRef.current = false);
+}, []);
+
+<NavigationContainer
+  ref={navigationRef}
+  onReady={() => {
+    isReadyRef.current = true;
+  }}
+>
+  <Stack.Navigator {...navigationListenerProps}>
+      {/* Rest of your code */}
+  </Stack.Navigator>
+</NavigationContainer>;
+```
+
+you can then listen to [stack navigation events](https://reactnavigation.org/docs/stack-navigator#events) anywhere in your app.
+
+Example in a component:
+```jsx
+import React, {useEffect} from "react"
+import {addNavigationListener} from "react-navigation-helpers"
+// or as a whole
+import * as NavigationService from "react-navigation-helpers";
+
+const MyComponent = () => {
+    
+    useEffect(() => {
+        return addNavigationListener("transitionEnd", () => {
+            // transition ended
+        })
+    })
+
+    // or like this
+    useEffect(() => {
+        return NavigationService.addNavigationListener("transitionEnd", () => {
+            // transition ended
+        })
+    })
+    
+    return (
+        <Text>Hello world!</Text>
+    )
+}
+```
+
+### Roadmap
 
 - [x] ~~LICENSE~~
 - [ ] Write an article about the lib on Medium
