@@ -9,18 +9,18 @@ interface RefObject<T> {
 }
 
 export type NavigationEvent =
-    | "transitionStart"
-    | "transitionEnd"
-    | "gestureStart"
-    | "gestureEnd"
-    | "gestureCancel"
-    | string;
+  | "transitionStart"
+  | "transitionEnd"
+  | "gestureStart"
+  | "gestureEnd"
+  | "gestureCancel"
+  | string;
 
 const listeners: Record<string, ((...args: any[]) => void)[]> = {};
 
 const removeNavigationListener = (
-    event: string,
-    callback: (...args: any[]) => void,
+  event: string,
+  callback: (...args: any[]) => void,
 ) => {
   if (listeners[event]) {
     listeners[event] = listeners[event].filter((cb) => cb !== callback);
@@ -34,8 +34,8 @@ const executeNavigationListeners = (eventName: string, ...args: any) => {
 };
 
 export const addNavigationListener = (
-    event: NavigationEvent,
-    callback: any,
+  event: NavigationEvent,
+  callback: any,
 ): (() => void) => {
   listeners[event] = listeners[event] || [];
   listeners[event].push(callback);
@@ -48,15 +48,15 @@ export const navigationRef = createNavigationContainerRef<any>();
 
 export const navigationListenerProps = {
   onTransitionEnd: (props, ...args) =>
-      executeNavigationListeners("transitionEnd", ...args),
+    executeNavigationListeners("transitionEnd", ...args),
   onTransitionStart: (props, ...args) =>
-      executeNavigationListeners("transitionStart", ...args),
+    executeNavigationListeners("transitionStart", ...args),
   onGestureStart: (props, ...args) =>
-      executeNavigationListeners("gestureStart", ...args),
+    executeNavigationListeners("gestureStart", ...args),
   onGestureEnd: (props, ...args) =>
-      executeNavigationListeners("gestureEnd", ...args),
+    executeNavigationListeners("gestureEnd", ...args),
   onGestureCancel: (props, ...args) =>
-      executeNavigationListeners("gestureCancel", ...args),
+    executeNavigationListeners("gestureCancel", ...args),
 };
 
 export const navigate = (routeName: string, params?: any) => {
