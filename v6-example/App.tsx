@@ -3,7 +3,7 @@ import { Text, View, SafeAreaView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { isReadyRef, navigationRef } from "react-navigation-helpers";
+import { isReadyRef, navigationRef, navigationListenerProps } from "react-navigation-helpers";
 /**
  * ? Local Imports
  */
@@ -33,7 +33,7 @@ const App = () => {
           isReadyRef.current = true;
         }}
       >
-        {/* <Stack.Navigator>
+        {/* <Stack.Navigator {...navigationListenerProps}>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Settings" component={SettingsScreen} />
         </Stack.Navigator> */}
