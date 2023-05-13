@@ -38,7 +38,7 @@
     "@react-native-community/eslint-config": "^3.0.1",
     "@types/lodash": "^4.14.181",
     "@types/node": "^20.1.0",
-    "@types/react-native": "^0.71.0",
+    "@types/react-native": "^0.72.0",
     "@types/react-native-restart": "^0.0.14",
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
