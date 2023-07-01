@@ -100,3 +100,10 @@ export const reset = (params: any) => {
     navigationRef.current?.reset(params);
   }
 };
+
+export const replace = (params: any) => {
+  if (isReadyRef.current && navigationRef && navigationRef.current) {
+    // Perform navigation if the app has mounted
+    navigationRef.current?.replace(params);
+  }
+};
