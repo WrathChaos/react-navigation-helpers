@@ -56,7 +56,7 @@
     "eslint-plugin-react-native": "4.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.1",
-    "metro-react-native-babel-preset": "^0.76.0",
+    "metro-react-native-babel-preset": "^0.77.0",
     "prettier": "^2.5.1",
     "typescript": "^5.0.2"
   },
