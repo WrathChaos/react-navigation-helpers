@@ -2,6 +2,7 @@ import * as React from "react";
 import {
   createNavigationContainerRef,
   StackActions,
+  TabActions,
 } from "@react-navigation/native";
 
 interface RefObject<T> {
@@ -44,7 +45,7 @@ export const addNavigationListener = (
 };
 
 export const isReadyRef: RefObject<boolean> = React.createRef<boolean>();
-export const navigationRef = createNavigationContainerRef<any>();
+export const navigationRef = createNavigationContainerRef();
 
 export const navigationListenerProps = {
   onTransitionEnd: (props, ...args) =>
@@ -59,30 +60,27 @@ export const navigationListenerProps = {
     executeNavigationListeners("gestureCancel", ...args),
 };
 
-export const navigate = (routeName: string, params?: any) => {
+export const navigate = (routeName, params) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
-    // Perform navigation if the app has mounted
+    // @ts-ignore
     navigationRef?.current?.navigate(routeName, params);
   }
 };
 
 export const push = (routeName: string, params?: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
-    // Perform navigation if the app has mounted
     navigationRef.current.dispatch(StackActions.push(routeName, params));
   }
 };
 
 export const goBack = () => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
-    // Perform navigation if the app has mounted
     navigationRef.current.goBack();
   }
 };
 
 export const pop = (...args: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
-    // Perform navigation if the app has mounted
     navigationRef.current?.dispatch(StackActions.pop(...args));
   }
 };
@@ -96,14 +94,18 @@ export const popToTop = () => {
 
 export const reset = (params: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
-    // Perform navigation if the app has mounted
     navigationRef.current?.reset(params);
   }
 };
 
 export const replace = (params: any) => {
   if (isReadyRef.current && navigationRef && navigationRef.current) {
-    // Perform navigation if the app has mounted
-    navigationRef.current?.replace(params);
+    navigationRef.current?.dispatch(StackActions.replace(params));
+  }
+};
+
+export const jumpTo = (params: any) => {
+  if (isReadyRef.current && navigationRef && navigationRef.current) {
+    navigationRef.current?.dispatch(TabActions.jumpTo(params));
   }
 };
