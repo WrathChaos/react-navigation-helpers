@@ -30,7 +30,7 @@
     "@react-navigation/native": ">= 4.x.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.2.0",
+    "@commitlint/cli": "^19.2.2",
     "@commitlint/config-conventional": "^18.1.0",
     "@react-native-community/eslint-config": "^3.0.3",
     "@types/react": "^18.2.14",
