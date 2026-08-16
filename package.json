@@ -1,6 +1,6 @@
 {
   "name": "react-navigation-helpers",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "description": "Easy to use React Navigation with these helpers for React Navigation on React Native",
   "keywords": [
     "v5",
@@ -23,11 +23,28 @@
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-navigation-helpers/issues",
   "main": "./build/dist/NavigationService.js",
+  "types": "./build/dist/NavigationService.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/dist/NavigationService.d.ts",
+      "default": "./build/dist/NavigationService.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "build/dist",
+    "!build/dist/build",
+    "!build/dist/lib",
+    "!build/dist/package.json",
+    "!build/dist/tsconfig.tsbuildinfo"
+  ],
   "repository": "git@github.com:WrathChaos/react-navigation-helpers.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "@react-navigation/native": ">= 4.x.x"
+    "@react-navigation/native": ">= 4.x.x",
+    "react": ">=17.0.0",
+    "react-native": ">=0.64.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
